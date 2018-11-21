@@ -1,7 +1,7 @@
 fileFormatVersion: 2
-guid: a3d3946dc12848340b2de890121ae354
+guid: 49a5116d9bb9c894691806db5d216b3f
 ModelImporter:
-  serializedVersion: 22
+  serializedVersion: 23
   fileIDToRecycleName:
     100000: mixamorig:Head
     100002: mixamorig:HeadTop_End
@@ -68,7 +68,9 @@ ModelImporter:
     100124: mixamorig:Spine
     100126: mixamorig:Spine1
     100128: mixamorig:Spine2
-    100130: //RootNode
+    100130: soldier
+    100132: //RootNode
+    100134: unamed
     400000: mixamorig:Head
     400002: mixamorig:HeadTop_End
     400004: mixamorig:Hips
@@ -134,9 +136,18 @@ ModelImporter:
     400124: mixamorig:Spine
     400126: mixamorig:Spine1
     400128: mixamorig:Spine2
-    400130: //RootNode
-    7400000: sprint_right
+    400130: soldier
+    400132: //RootNode
+    400134: unamed
+    2100000: No Name
+    2300000: unamed
+    3300000: unamed
+    4300000: soldier
+    4300002: unamed
+    7400000: mixamo.com
     9500000: //RootNode
+    13700000: soldier
+    2186277476908879412: ImportLogs
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -164,35 +175,7 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations:
-    - serializedVersion: 16
-      name: sprint_right
-      takeName: mixamo.com
-      firstFrame: 0
-      lastFrame: 15
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 1
-      loopBlend: 1
-      loopBlendOrientation: 1
-      loopBlendPositionY: 1
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 1
-      keepOriginalPositionY: 0
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 1
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
+    clipAnimations: []
     isReadable: 1
   meshes:
     lODScreenPercentages: []
@@ -216,6 +199,8 @@ ModelImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -991,7 +976,6 @@ ModelImporter:
     legStretch: 0.05
     feetSpacing: 0
     rootMotionBoneName: 
-    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 1
     skeletonHasParents: 1

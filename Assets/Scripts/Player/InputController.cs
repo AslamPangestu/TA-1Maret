@@ -95,18 +95,13 @@ public class InputController : MonoBehaviour {
         if(!spine || !weaponHandler.curWeapon || !mainCamera){
             return;
         }
-        RaycastHit hit;
         Transform mainCamTransform = mainCamera.transform;
         Vector3 mainCamPosition = mainCamTransform.position;
         Vector3 dir = mainCamTransform.forward;
         Ray ray = new Ray(mainCamPosition,dir);
 
-        if(Physics.Raycast(ray,out hit,100,otherSettings.aimDetectionLayer)){
-            Vector3 hitPoint = hit.point;
-            spine.LookAt(hitPoint);
-        }else{
-            spine.LookAt(ray.GetPoint(50));
-        }
+        spine.LookAt(ray.GetPoint(50));
+
         Vector3 eulerAngelOffset = weaponHandler.curWeapon.userSettings.spineRotation;
         spine.Rotate(eulerAngelOffset);
     }
@@ -115,8 +110,7 @@ public class InputController : MonoBehaviour {
         if(!weaponHandler){
             return;
         }
-        aiming = Input.GetButtonDown(inputSettings.aimBtn);
-
+        aiming = Input.GetButtonDown(inputSettings.aimBtn) || debugAim;
         if(weaponHandler.curWeapon){
             weaponHandler.Aiming(aiming);
             otherSettings.requiredInputForTurn = !aiming;

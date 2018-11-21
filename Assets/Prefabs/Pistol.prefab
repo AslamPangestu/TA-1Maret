@@ -135,14 +135,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1914945148610296}
-  m_LocalRotation: {x: -0.7071068, y: -0, z: 0.7071068, w: 0}
-  m_LocalPosition: {x: -0.025, y: 0.2, z: 0.03}
-  m_LocalScale: {x: 0.35000014, y: 0.35000056, z: 0.35000044}
+  m_LocalRotation: {x: 0.7358837, y: 0.08692233, z: -0.67124677, w: -0.018640198}
+  m_LocalPosition: {x: -0.0387, y: 0.1718, z: 0.0568}
+  m_LocalScale: {x: 0.3500015, y: 0.3500034, z: 0.3500019}
   m_Children:
   - {fileID: 4997891963348746}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -90.00001, z: 180}
+  m_LocalEulerAnglesHint: {x: 5.1210003, y: -455.656, z: 531.166}
 --- !u!4 &4370576404086150
 Transform:
   m_ObjectHideFlags: 1
@@ -477,7 +477,7 @@ MonoBehaviour:
   weaponType: 0
   userSettings:
     leftHandIKTarget: {fileID: 0}
-    spineRotation: {x: 0, y: 0, z: 0}
+    spineRotation: {x: 3.6, y: 45, z: 7.45}
   weaponSettings:
     bulletSpawn: {fileID: 4890230234407468}
     damage: 5
@@ -496,14 +496,14 @@ MonoBehaviour:
     shellEjectSpeed: 7.5
     clipEjectPos: {fileID: 0}
     clipGO: {fileID: 0}
-    equipPos: {x: -0.025, y: 0.2, z: 0.03}
-    equipRot: {x: 1.8002322, y: 5.0206785, z: 88.871864}
-    unequipPos: {x: 0.25, y: -0.16, z: 0.006}
-    unequipRot: {x: 355.5969, y: -0.0000000010125486, z: 5.638253e-11}
+    equipPos: {x: -0.026, y: 0.168, z: 0.068}
+    equipRot: {x: 356.139, y: 290.33, z: 153.3191}
+    unequipPos: {x: 0.25, y: -0.158, z: -0.023}
+    unequipRot: {x: 358.26306, y: -0.0000000030137393, z: 2.6577435e-10}
     useAnim: 0
     fireAnimLayer: 0
     fireAnimName: ' Fire'
   ammo:
-    carryAmmo: 0
-    clipAmmo: 0
-    maxAmmo: 0
+    carryAmmo: 120
+    clipAmmo: 8
+    maxAmmo: 15

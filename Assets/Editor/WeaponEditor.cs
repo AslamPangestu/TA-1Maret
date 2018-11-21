@@ -15,14 +15,14 @@ public class WeaponEditor : Editor {
 		if(GUILayout.Button("Save gun equip location")){
 			Transform weaponTransform = weapon.transform;
 			Vector3 weaponPos = weaponTransform.localPosition;
-			Vector3 weaponRot = weaponTransform.eulerAngles;
+			Vector3 weaponRot = weaponTransform.localEulerAngles;
 			weapon.weaponSettings.equipPos = weaponPos;
 			weapon.weaponSettings.equipRot = weaponRot;
 		}
 		if(GUILayout.Button("Save gun unequip location")){
 			Transform weaponTransform = weapon.transform;
 			Vector3 weaponPos = weaponTransform.localPosition;
-			Vector3 weaponRot = weaponTransform.eulerAngles;
+			Vector3 weaponRot = weaponTransform.localEulerAngles;
 			weapon.weaponSettings.unequipPos = weaponPos;
 			weapon.weaponSettings.unequipRot = weaponRot;
 		}

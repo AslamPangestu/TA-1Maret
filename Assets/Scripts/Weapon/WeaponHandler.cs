@@ -106,6 +106,7 @@ public class WeaponHandler : MonoBehaviour {
 		if(curWeapon.ammo.carryAmmo <= 0 || curWeapon.ammo.clipAmmo == curWeapon.ammo.maxAmmo){
 			return;
 		}
+		reload  = true;
 		StartCoroutine(StopReload());
 	}
 
