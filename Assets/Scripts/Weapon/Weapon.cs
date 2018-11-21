@@ -70,6 +70,8 @@ public class Weapon : MonoBehaviour {
 	}
 	[SerializeField]
 	public Ammo ammo;
+
+	public Ray shootRay {protected get;set;}
 	WeaponHandler handler;
 	bool equipped;
 	bool pullingTrigger;
@@ -90,7 +92,7 @@ public class Weapon : MonoBehaviour {
 				if(handler.userSettings.rightHand){
 					Equip();
 					if(pullingTrigger){
-						Fire();
+						Fire(shootRay);
 					}
 				}
 			}else{
@@ -103,14 +105,14 @@ public class Weapon : MonoBehaviour {
 	}
 
 	//fire weapon
-	void Fire(){
+	void Fire(Ray ray){
 		if(ammo.clipAmmo<=0||resettingCarridge||!weaponSettings.bulletSpawn){
 			return;
 		}
 		RaycastHit hit;
 		Transform bSpawn = weaponSettings.bulletSpawn;
 		Vector3 bSpawnPoint = bSpawn.position;
-		Vector3 dir = bSpawn.forward;
+		Vector3 dir = ray.GetPoint(weaponSettings.range);
 
 		dir += (Vector3)Random.insideUnitCircle * weaponSettings.bulletSpread;
 

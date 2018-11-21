@@ -46,10 +46,14 @@ public class CharacterMovement : MonoBehaviour {
     bool resetGravity;
     float gravity;
 
+    void Awake() {
+        animator = GetComponent<Animator>();
+        SetupAnimator();
+    }
+
     // Use this for initialization
     void Start () {
         //Mengambil komponen dari objek
-        animator = GetComponent<Animator>();
         characterController = GetComponent<CharacterController>();
 
         SetupAnimator();
@@ -91,6 +95,14 @@ public class CharacterMovement : MonoBehaviour {
         characterController.Move(gravityVector * Time.deltaTime);
     }
 
+    // public void Move (float forward, float strafe){
+    //     ApplyGravity();
+    //     Animate(forward,strafe);
+    //     Vector3 moveVector = new Vector3(strafe, -gravity, forward);
+    //     moveVector.z *= Time.deltaTime;
+    //     moveVector.x *= Time.deltaTime;
+    //     characterController.Move(moveVector);
+    // }
     //animasi pada character
     public void Animate(float forward, float strafe)
     {

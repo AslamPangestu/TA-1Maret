@@ -34,7 +34,7 @@ public class InputController : MonoBehaviour {
     [SerializeField]
     OtherSettings otherSettings;
 
-    Camera mainCamera;
+    public Camera mainCamera;
 
     public bool debugAim;
     public Transform spine;
@@ -43,7 +43,6 @@ public class InputController : MonoBehaviour {
     void Start()
     {
         characterMovement = GetComponent<CharacterMovement>();
-        mainCamera = Camera.main;
         weaponHandler = GetComponent<WeaponHandler>();
     }
 
@@ -111,20 +110,22 @@ public class InputController : MonoBehaviour {
             return;
         }
         aiming = Input.GetButtonDown(inputSettings.aimBtn) || debugAim;
-        if(weaponHandler.curWeapon){
-            weaponHandler.Aiming(aiming);
-            otherSettings.requiredInputForTurn = !aiming;
-            weaponHandler.FingerOnTrigger(Input.GetButton(inputSettings.fireBtn));
-            if(Input.GetButtonDown(inputSettings.reloadBtn)){
-                weaponHandler.Reloading();
-            }
-            if(Input.GetButtonDown(inputSettings.dropWeaponBtn)){
-                weaponHandler.DropCurWeapon();
-            }
-            if(Input.GetButtonDown(inputSettings.switchWeaponBtn)){
-                weaponHandler.SwitchWeapon();
-            }
+        weaponHandler.Aiming(aiming);
+        otherSettings.requiredInputForTurn = !aiming;
+        weaponHandler.FingerOnTrigger(Input.GetButton(inputSettings.fireBtn));
+        if(Input.GetButtonDown(inputSettings.reloadBtn)){
+            weaponHandler.Reloading();
         }
+        if(Input.GetButtonDown(inputSettings.dropWeaponBtn)){
+            weaponHandler.DropCurWeapon();
+        }
+        if(Input.GetButtonDown(inputSettings.switchWeaponBtn)){
+            weaponHandler.SwitchWeapon();
+        }
+        if(!weaponHandler.curWeapon){
+            return;
+        }
+        weaponHandler.curWeapon.shootRay = new Ray(mainCamera.transform.position,mainCamera.transform.forward);
     }
     void CharacterLook()
     {

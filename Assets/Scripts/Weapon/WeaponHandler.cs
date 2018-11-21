@@ -47,6 +47,11 @@ public class WeaponHandler : MonoBehaviour {
 			if(curWeapon.ammo.clipAmmo <=0){
 				Reloading();
 			}
+			if(reload){
+				if(settingWeapon){
+					reload=false;
+				}
+			}
 		}
 		if(weaponList.Count > 0){
 			for(int i = 0; i<weaponList.Count; i++){
@@ -95,7 +100,7 @@ public class WeaponHandler : MonoBehaviour {
 		if(!curWeapon){
 			return;
 		}
-		curWeapon.PullTrigger(pulling);
+		curWeapon.PullTrigger(pulling && aim && !reload);
 	}
 
 	//reload current weapon
@@ -130,11 +135,12 @@ public class WeaponHandler : MonoBehaviour {
 		curWeapon.SetEquipped(false);
 		curWeapon.SetOwner(null);
 		weaponList.Remove(curWeapon);
+		curWeapon = null;
 	}
 
 	//switch weapon
 	public void SwitchWeapon(){
-		if(settingWeapon){
+		if(settingWeapon || weaponList.Count == 0){
 			return;
 		}
 		if(curWeapon){
