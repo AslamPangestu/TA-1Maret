@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class InputController : MonoBehaviour {
 
-    CharacterMovement characterMovement;
-    WeaponHandler weaponHandler;
+    public CharacterMovement characterMovement {get;protected set;}
+    public WeaponHandler weaponHandler {get;protected set;}
 
     [System.Serializable]
     public class InputSettings
